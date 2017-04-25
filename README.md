@@ -7,6 +7,8 @@ and small shapes inside each image include: triangle, square and circle.
 
 The first labels show the object category and the second label shows the shape inside each image.
 
+[example](https://github.com/AliAbbasi/Multilabel-Image-Classification-with-Softmax/blob/master/raw_images/0a%20(2).png)
+
 Use 'dataAugmentation.py' to create artificially more image by rotating them. you can also add flip horizontally and vertically and more rotation degrees, also, use blur, add noise, transfer pixels to right, left, up, down, zoom in, zoom out and other augmentation methods.
 
 The original images is 200x200 pixels, use 'resize.py' to resize images to any size you want. The classifier work with 32x32 input images.
@@ -15,6 +17,8 @@ The original images is 200x200 pixels, use 'resize.py' to resize images to any s
 The name of images shows the labels. first character shows the index of 1 in one-hot vector format, and the second character stands for the shape inside each image, 'a' for squares, 'b' for triangles and 'c' for circles.
 
 '32x32-two-labeled-images.npz' file is created by me based on ~12k augmented images.
+
+
 
 
 Create by Ali Abbasi, Apr-2017 contact me if you have any question or suggestion 
