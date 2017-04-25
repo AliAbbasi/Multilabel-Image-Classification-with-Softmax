@@ -8,8 +8,6 @@ and small shapes inside each image include: triangle, square and circle.
 The first labels show the object category and the second label shows the shape inside each image.
 
 ![alt text](https://github.com/AliAbbasi/Multilabel-Image-Classification-with-Softmax/blob/master/raw_images/0a%20(2).png)
-![alt text](https://github.com/AliAbbasi/Multilabel-Image-Classification-with-Softmax/blob/master/raw_images/0b%20(2).png)
-![alt text](https://github.com/AliAbbasi/Multilabel-Image-Classification-with-Softmax/blob/master/raw_images/0c%20(2).png)
 ![alt text](https://github.com/AliAbbasi/Multilabel-Image-Classification-with-Softmax/blob/master/raw_images/1a%20(2).png)
 ![alt text](https://github.com/AliAbbasi/Multilabel-Image-Classification-with-Softmax/blob/master/raw_images/2b%20(2).png)
 ![alt text](https://github.com/AliAbbasi/Multilabel-Image-Classification-with-Softmax/blob/master/raw_images/3c%20(2).png)
