@@ -1,0 +1,26 @@
+This is an example of Multi-label Softmax Classifier
+
+The 'raw_images' directory shows the dataset include two labeled images of objects and shapes
+
+The dataset consist of 8 category trivial objects include: helmet, kettle, joystick, keyboard, mouse, stapler, barrel and mug
+and small shapes inside each image include: triangle, square and circle 
+
+The first labels show the object category and the second label shows the shape inside each image.
+
+Use 'dataAugmentation.py' to create artificially more image by rotating them. you can also add flip horizontally and vertically and more rotation degrees,
+also, use blur, add noise, transfer pixels to right, left, up, down, zoom in, zoom out and other augmentation methods.
+
+The original images is 200x200 pixels, use 'resize.py' to resize images to any size you want. The classifier work with 32x32 input images.
+
+'convertToMatrix.py' convert all images to '.npz' file and add ground truth label to them.
+The name of images shows the labels. first character shows the index of 1 in one-hot vector format, and the second character stands for the shape inside
+each image, 'a' for squares, 'b' for triangles and 'c' for circles.
+
+'32x32-two-labeled-images.npz' file is created by me
+based on ~12k augmented images.
+
+
+Create by Ali Abbasi, Apr-2017 contact me if you have any question or suggestion
+email: abbasi.ali.tab@gmail.com
+github: https://github.com/AliAbbasi
+Linkedin: https://www.linkedin.com/in/ali-abbasi-6b5512b7/
