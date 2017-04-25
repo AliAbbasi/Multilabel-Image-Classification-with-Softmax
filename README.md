@@ -7,7 +7,7 @@ and small shapes inside each image include: triangle, square and circle.
 
 The first labels show the object category and the second label shows the shape inside each image.
 
-[example](https://github.com/AliAbbasi/Multilabel-Image-Classification-with-Softmax/blob/master/raw_images/0a%20(2).png)
+ https://github.com/AliAbbasi/Multilabel-Image-Classification-with-Softmax/blob/master/raw_images/0a%20(2).png 
 
 Use 'dataAugmentation.py' to create artificially more image by rotating them. you can also add flip horizontally and vertically and more rotation degrees, also, use blur, add noise, transfer pixels to right, left, up, down, zoom in, zoom out and other augmentation methods.
 
