@@ -24,10 +24,6 @@ The name of images shows the labels. first character shows the index of 1 in one
 
 
 
-Create by Ali Abbasi, Apr-2017 contact me if you have any question or suggestion 
-
+Contact me if you have any question or suggestion 
 email: abbasi.ali.tab@gmail.com
-
-github: https://github.com/AliAbbasi
-
 Linkedin: https://www.linkedin.com/in/ali-abbasi-6b5512b7/
