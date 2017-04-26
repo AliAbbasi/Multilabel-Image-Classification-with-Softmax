@@ -1,4 +1,5 @@
-This is an example of Multi-label Softmax Classifier.
+This is an example of Multi-label Softmax Classifier written by python and tensorflow.
+
 
 The 'raw_images' directory shows the dataset include two labeled images of objects and shapes.
 
