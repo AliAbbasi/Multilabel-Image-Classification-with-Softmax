@@ -91,7 +91,7 @@ class ConvNet( object ):
         convLyr_3_relu = tf.nn.relu(convLyr_3_conv)
         convLyr_3_pool = maxpool2d(convLyr_3_relu, k=2)
         
-        # 5) Fully Connected
+        # 4) Fully Connected
         fcLyr_1 = tf.reshape(convLyr_3_pool, [-1,self.params_w_['wFCh'].get_shape().as_list()[0]])
         fcLyr_1 = tf.add(tf.matmul(fcLyr_1, self.params_w_['wFCh']), self.params_b_['bFCh'])
         fcLyr_1 = tf.nn.relu(fcLyr_1)
@@ -100,10 +100,9 @@ class ConvNet( object ):
         netOut = tf.add(tf.matmul(fcLyr_1, self.params_w_['wOut']), self.params_b_['bOut'])
         
         # packing the results   
-        PackShow = [convLyr_1_conv,convLyr_1_relu,convLyr_2_conv,convLyr_2_relu,convLyr_2_pool,
-                    convLyr_3_conv,convLyr_3_relu]
+        PackShow = [convLyr_1_conv,convLyr_1_relu,convLyr_2_conv,convLyr_2_relu,convLyr_2_pool, convLyr_3_conv,convLyr_3_relu]
         
-        return netOut,PackShow
+        return netOut, PackShow
         
     #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
