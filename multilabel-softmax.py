@@ -46,7 +46,7 @@ teY = teY.reshape( -1, 16       )
 
 class ConvNet( object ):
 
-    def paramsFun(self): 
+    def parameters(self): 
         params_w = {'wLyr1': tf.Variable(tf.random_normal([ 3, 3, 1,  self.lyr1FilterNo_                        ])),
                     'wLyr2': tf.Variable(tf.random_normal([ 3, 3,     self.lyr1FilterNo_ , self.lyr2FilterNo_   ])),
                     'wLyr3': tf.Variable(tf.random_normal([ 3, 3,     self.lyr2FilterNo_ , self.lyr3FilterNo_   ])),
@@ -62,7 +62,7 @@ class ConvNet( object ):
 
     #======================================================================================================================================================================================================================
 
-    def scoreFun(self):
+    def score(self):
 
         def conv2d(x, W, b, strides=1):
             x = tf.nn.conv2d(x, W, strides=[1, strides, strides, 1], padding='SAME')
@@ -106,7 +106,7 @@ class ConvNet( object ):
         
     #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
-    def costFun(self):
+    def costs(self):
     
         score_split = tf.split( 1, 2, self.score_ )
         label_split = tf.split( 1, 2, self.y_     ) 
@@ -117,12 +117,12 @@ class ConvNet( object ):
         
     #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------   
 
-    def updateFun(self):
+    def optimizer(self):
         return tf.train.AdamOptimizer(learning_rate = self.lr_).minimize(self.cost_)
 
     #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    def perfFun(self): 
+    def accuracy(self): 
     
         score_split = tf.split( 1, 2, self.score_ )
         label_split = tf.split( 1, 2, self.y_     ) 
@@ -147,11 +147,11 @@ class ConvNet( object ):
         self.fcHidLyrSize_ = fcHidLyrSize
         self.keepProb_     = keepProb
 
-        [self.params_w_, self.params_b_] = ConvNet.paramsFun(self) # initialization and packing the parameters
-        self.score_, self.PackShow_      = ConvNet.scoreFun (self) # Computing the score function
-        self.cost_                       = ConvNet.costFun  (self) # Computing the cost function
-        self.update_                     = ConvNet.updateFun(self) # Computing the update function
-        self.perf_1,self.perf_2          = ConvNet.perfFun  (self) # performance
+        [self.params_w_, self.params_b_] = ConvNet.parameters(self) # initialization and packing the parameters
+        self.score_ , self.PackShow_     = ConvNet.score     (self)  # Computing the score function
+        self.cost_                       = ConvNet.costs     (self)  # Computing the cost function
+        self.optimizer_                  = ConvNet.optimizer (self)  # Computing the update function
+        self.perf_1, self.perf_2         = ConvNet.accuracy  (self)  # performance
 
 #======================================================================================================================================================================================================================
 
@@ -177,8 +177,7 @@ if __name__ == '__main__':
     
     
     with tf.Session() as sess:
-        sess.run(initVar)
-        print("-------------------------------------------------------------")   
+        sess.run(initVar)  
        
         index = 0
         trainplot = []
@@ -198,7 +197,7 @@ if __name__ == '__main__':
             trLabel_i = np.reshape( trLabel_i, ( -1, 16     ) )
 
             
-            update_i, PackShow, wLyr1_i, wLyr2_i, wLyr3_i = sess.run([ConvNet_class.update_, ConvNet_class.PackShow_,
+            update_i, PackShow, wLyr1_i, wLyr2_i, wLyr3_i = sess.run([ConvNet_class.optimizer_, ConvNet_class.PackShow_,
                         ConvNet_class.params_w_['wLyr1'],ConvNet_class.params_w_['wLyr2'] ,
                         ConvNet_class.params_w_['wLyr3']], 
                         feed_dict = { x:trData_i, y:trLabel_i, keepProb:dropout} )
