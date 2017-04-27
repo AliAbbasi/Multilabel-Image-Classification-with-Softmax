@@ -3,9 +3,13 @@ This is an example of Multi-label Softmax Classifier written by python and tenso
 Pre-requestes:
 
 Python 2.7.11
+
 Tensorflow 1.1
+
 Numpy
+
 PIL
+
 
 
 
