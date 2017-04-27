@@ -2,15 +2,10 @@ This is an example of Multi-label Softmax Classifier written by python and tenso
 
 Pre-requestes:
 
-Python 2.7.11
-
-Tensorflow 1.1
-
-Numpy
-
-PIL
-
-
+      Python 2.7.11
+      Tensorflow 1.1
+      Numpy
+      PIL
 
 
 The 'raw_images' directory shows the dataset include two labeled images of objects and shapes.
