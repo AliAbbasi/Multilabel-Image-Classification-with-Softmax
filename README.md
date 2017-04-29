@@ -31,9 +31,3 @@ The name of images shows the labels. first character shows the index of 1 in one
 
 
 
-
-Contact me if you have any question or suggestion 
-
-email: abbasi.ali.tab@gmail.com
-
-Linkedin: https://www.linkedin.com/in/ali-abbasi-6b5512b7/
