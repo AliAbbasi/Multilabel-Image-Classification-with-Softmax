@@ -1,4 +1,4 @@
-This is an example of Multi-label Softmax Classifier written by python and tensorflow.
+This is an example of Multi-label Softmax Classifier with python and tensorflow.
 
 Pre-requestes:
 
