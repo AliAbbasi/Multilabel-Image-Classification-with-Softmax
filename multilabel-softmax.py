@@ -16,9 +16,7 @@
 
 import sys , random
 import tensorflow                          as     tf
-import numpy                               as     np 
-from   random                              import randint
-from   PIL                                 import Image
+import numpy                               as     np  
 from   numpy                               import array
 
 #======================================================================================================================================================================================================================
@@ -29,8 +27,7 @@ trX, trY = data[ 'datax' ], data[ 'datay' ]
 # shuffling the arrays
 shuffling = list(zip(trX, trY))
 random.shuffle(shuffling)              
-trX, trY = zip(*shuffling)
-
+trX, trY = zip(*shuffling) 
 
 trX = np.asarray(trX)
 trY = np.asarray(trY)
@@ -99,10 +96,7 @@ class ConvNet( object ):
         
         netOut = tf.add(tf.matmul(fcLyr_1, self.params_w_['wOut']), self.params_b_['bOut'])
         
-        # packing the results   
-        PackShow = [convLyr_1_conv,convLyr_1_relu,convLyr_2_conv,convLyr_2_relu,convLyr_2_pool, convLyr_3_conv,convLyr_3_relu]
-        
-        return netOut, PackShow
+        return netOut
         
     #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -148,7 +142,7 @@ class ConvNet( object ):
         self.keepProb_     = keepProb
 
         [self.params_w_, self.params_b_] = ConvNet.parameters(self) # initialization and packing the parameters
-        self.score_ , self.PackShow_     = ConvNet.score     (self)  # Computing the score function
+        self.score_                      = ConvNet.score     (self)  # Computing the score function
         self.cost_                       = ConvNet.costs     (self)  # Computing the cost function
         self.optimizer_                  = ConvNet.optimizer (self)  # Computing the update function
         self.perf_1, self.perf_2         = ConvNet.accuracy  (self)  # performance
@@ -178,11 +172,7 @@ if __name__ == '__main__':
     
     with tf.Session() as sess:
         sess.run(initVar)  
-       
-        index = 0
-        trainplot = []
-        testplot  = []
-        steps     = []
+        index = 0 
 
         for batch_i in range(10000):
             trData_i, trLabel_i = [], []
@@ -197,10 +187,7 @@ if __name__ == '__main__':
             trLabel_i = np.reshape( trLabel_i, ( -1, 16     ) )
 
             
-            update_i, PackShow, wLyr1_i, wLyr2_i, wLyr3_i = sess.run([ConvNet_class.optimizer_, ConvNet_class.PackShow_,
-                        ConvNet_class.params_w_['wLyr1'],ConvNet_class.params_w_['wLyr2'] ,
-                        ConvNet_class.params_w_['wLyr3']], 
-                        feed_dict = { x:trData_i, y:trLabel_i, keepProb:dropout} )
+            sess.run( ConvNet_class.optimizer_ , feed_dict = { x:trData_i, y:trLabel_i, keepProb:dropout} )
               
             if batch_i%10 == 0: 
             
