@@ -5,12 +5,7 @@
 # The dataset consist of 8 category trivial objects include: helmet, kettle, joystick, keyboard, mouse, stapler, barrel and mug
 # and small shapes inside each image include: triangle, square and circle 
 
-# The first labels shows the object category and the second label shows the shape inside each image.
-
-# Create by Ali Abbasi, Apr-2017 contact me if you have ant question or suggestion
-# email: abbasi.ali.tab@gmail.com
-# github: https://github.com/AliAbbasi
-# Linkedin: https://www.linkedin.com/in/ali-abbasi-6b5512b7/
+# The first labels shows the object category and the second label shows the shape inside each image. 
 
 #======================================================================================================================================================================================================================
 
